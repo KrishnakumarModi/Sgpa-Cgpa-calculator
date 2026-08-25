@@ -1,16 +1,130 @@
-# React + Vite
+# 🎓 SGPA & CGPA Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive **SGPA & CGPA Calculator** built with **React, Tailwind CSS, and FastAPI**.
 
-Currently, two official plugins are available:
+The application allows students to dynamically enter their subjects, grades, and credits and calculate their **SGPA**. It can also be extended to calculate **CGPA** across multiple semesters.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+* 📚 Dynamic subject input fields
+* 📝 Enter grade, and credit
+* 🧮 Automatic SGPA calculation
+* 📊 CGPA calculation support
+* ⚡ FastAPI backend
+* ⚛️ React frontend
+* 🎨 Tailwind CSS styling
+* 🔄 Frontend ↔ Backend API communication
+* ✅ Input validation
+* 📱 Responsive design
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+### Frontend
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React
+* JavaScript
+* Tailwind CSS
+* Vite
+
+### Backend
+
+* Python
+* FastAPI
+* Pydantic
+* Uvicorn
+
+## 🧮 SGPA Calculation
+
+The calculator uses the following formula:
+
+```text
+SGPA = Σ(Credit × Grade Point) / Σ(Credit)
+```
+
+### Example
+
+| Subject                 | Grade | Grade Point | Credit |
+| ----------------------- | ----- | ----------: | -----: |
+| Compiler Design         | A+    |          10 |      4 |
+| Artificial Intelligence | A     |           9 |      3 |
+| Web Technology          | B+    |           8 |      3 |
+
+Calculation:
+
+```text
+(4 × 10) + (3 × 8) + (3 × 9)
+--------------------------------
+        4 + 3 + 3
+
+= 91 / 10
+
+= 9.10
+```
+
+> **Note:** Grade points may vary depending on your university's grading system.
+
+## 🔌 API
+
+### Request Body
+
+```json
+{
+  "subjects": [
+    {
+      "grade": "A+",
+      "credit": 4
+    },
+    {
+      "grade": "A",
+      "credit": 3
+    },
+    {
+      "grade": "B+",
+      "credit": 3
+    }
+  ]
+}
+```
+
+### Example Response
+
+```json
+{
+  "total_credit": 10,
+  "total_credit_points": 81,
+  "sgpa": 8.1
+}
+```
+
+## 📈 CGPA
+
+The project can calculate CGPA using semester-wise SGPA and credits.
+
+A commonly used weighted formula is:
+
+```text
+CGPA = Σ(SGPA × Semester Credit) / Σ(Semester Credit)
+```
+
+The exact calculation can be configured according to the grading system of the institution.
+
+## 🔮 Future Improvements
+
+* [ ] Add CGPA calculator UI
+* [ ] Add semester management
+* [ ] Save calculation history
+* [ ] Add database support
+* [ ] Add user authentication
+* [ ] Add multiple grading systems
+* [ ] Add result download
+* [ ] Add result sharing
+* [ ] Deploy the application
+* [ ] Add dark mode
+* [ ] Improve mobile responsiveness
+
+## 👨‍💻 Author
+
+**Krishna Kumar Modi**
+
+Built as a learning project using **React, Tailwind CSS, FastAPI, and Python**.
+
