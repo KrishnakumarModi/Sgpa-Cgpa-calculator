@@ -33,6 +33,9 @@ The application allows students to dynamically enter their subjects, grades, and
 * Pydantic
 * Uvicorn
 
+### For Backend
+- Visit🔗 https://github.com/KrishnakumarModi/SGPA-CGPA-Backend
+
 ## 🧮 SGPA Calculation
 
 The calculator uses the following formula:
