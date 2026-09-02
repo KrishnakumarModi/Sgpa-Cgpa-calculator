@@ -7,6 +7,7 @@ export default function Home() {
   const [subjects, setSubjects] = useState([]);
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   // Create dynamic subject fields
   const handleSubmit = (e) => {
@@ -72,7 +73,7 @@ export default function Home() {
         return;
       }
     }
-
+    setLoading(true);
     try {
       const response = await axios.post(
         `${API_URL}/calculate-sgpa`,
@@ -102,6 +103,7 @@ export default function Home() {
         setError("Something went wrong while sending the request.");
       }
     }
+    setLoading(false);
   };
 
   return (
@@ -213,9 +215,16 @@ export default function Home() {
             <button
               type="button"
               onClick={calculateSGPA}
+              disabled={loading}
               className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition duration-200 mt-4"
-            >
-              Calculate SGPA
+            > {loading ? (
+              <>
+                Calculating...
+              </>
+            ) : (
+              "Calculate SGPA"
+            )}
+
             </button>
 
 
