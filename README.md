@@ -4,6 +4,10 @@ A modern and responsive **SGPA & CGPA Calculator** built with **React, Tailwind 
 
 The application allows students to dynamically enter their subjects, grades, and credits and calculate their **SGPA**. It can also be extended to calculate **CGPA** across multiple semesters.
 
+## Live Demo
+
+- https://sgpa-cgpa-calculator-neon.vercel.app
+
 ## 🚀 Features
 
 * 📚 Dynamic subject input fields
